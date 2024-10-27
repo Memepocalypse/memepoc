@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memepocalypse (MEMEPOC)</title>
     <style>
-        /* General styling */
+        /* General Styling */
         body {
             font-family: Arial, sans-serif;
             color: #333;
@@ -16,44 +16,71 @@
         header {
             background-color: gold;
             color: #333;
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
         }
         header h1 {
             margin: 0;
+            font-size: 2.5rem;
         }
         nav {
+            display: flex;
+            justify-content: center;
             background: #333;
-            overflow: hidden;
         }
         nav a {
             color: #fff;
             padding: 1rem;
-            display: inline-block;
+            display: block;
             text-decoration: none;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: #555;
         }
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 1rem;
+            padding: 1.5rem;
         }
         .section {
             padding: 2rem 1rem;
         }
         .section h2 {
             color: #555;
+            font-size: 2rem;
         }
         footer {
             background: #333;
             color: #fff;
             text-align: center;
-            padding: 1rem;
+            padding: 1.5rem;
         }
-        /* Tab content */
+        /* Tab Content */
         .tab {
             display: none;
         }
-        /* Images */
+        .tabcontent {
+            display: none;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .active-tab {
+            display: block;
+        }
+        /* Timeline */
+        .timeline-item {
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+        .timeline-item:hover {
+            transform: scale(1.05);
+            background: #eee;
+        }
+        /* Image styling */
         img {
             max-width: 100%;
             height: auto;
@@ -69,19 +96,19 @@
 </header>
 
 <nav>
-    <a href="#home" onclick="openTab(event, 'home')">Home</a>
-    <a href="#timeline" onclick="openTab(event, 'timeline')">Timeline</a>
-    <a href="#memecoins" onclick="openTab(event, 'memecoins')">Famous Meme Coins</a>
-    <a href="#community" onclick="openTab(event, 'community')">Community</a>
+    <a href="#" onclick="openTab(event, 'home')">Home</a>
+    <a href="#" onclick="openTab(event, 'timeline')">Timeline</a>
+    <a href="#" onclick="openTab(event, 'memecoins')">Famous Meme Coins</a>
+    <a href="#" onclick="openTab(event, 'community')">Community</a>
 </nav>
 
 <div class="container">
     <!-- Home Section -->
-    <div id="home" class="tab" style="display: block;">
+    <div id="home" class="tab active-tab">
         <div class="section">
             <h2>Welcome to Memepocalypse</h2>
             <p>Memepocalypse (MEMEPOC) is a project dedicated to preserving and documenting the cultural evolution of memes. Explore the timeline, learn about famous meme coins, and join a growing community that values meme culture.</p>
-            <img src="BannerGit.PNG" alt="Memepocalypse Banner">
+            <img src="path/to/home_image.png" alt="Memepocalypse Banner">
         </div>
     </div>
 
@@ -90,7 +117,15 @@
         <div class="section">
             <h2>The Evolution of Memes</h2>
             <p>From Ancient Egypt to the 2024 meme coin surge, memes have shaped our culture and continue to evolve with new digital innovations.</p>
-            <img src="History.webp" alt="Memes Timeline">
+            <div class="timeline-item">
+                <h3>Ancient Roman Graffiti (79 CE, Pompeii)</h3>
+                <img src="path/to/timeline_image.png" alt="Ancient Roman Graffiti">
+                <p>The eruption of Mt. Vesuvius preserved Roman graffiti that mocked politicians and public figures.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Ancient Egyptian Hieroglyphs (c. 3200 BCE)</h3>
+                <p>Depictions of animals in human situations, reflecting an early form of satire.</p>
+            </div>
         </div>
     </div>
 
@@ -99,20 +134,15 @@
         <div class="section">
             <h2>Famous Meme Coins</h2>
             <p>Discover some of the most popular meme coins and learn about their history and impact.</p>
-            <div class="coin">
+            <div class="timeline-item">
                 <h3>Dogecoin (2013)</h3>
-                <img src="Doge.webp" alt="Dogecoin">
-                <p>Launched as a joke, Dogecoin became a cultural phenomenon due to its strong community and meme-based appeal.</p>
+                <img src="path/to/dogecoin_image.png" alt="Dogecoin">
+                <p>Created as a joke, Dogecoin became a popular meme coin with a dedicated community.</p>
             </div>
-            <div class="coin">
+            <div class="timeline-item">
                 <h3>Shiba Inu (2020)</h3>
-                <img src="path/to/ShibaInu.webp" alt="Shiba Inu">
-                <p>Often called the "Dogecoin Killer," Shiba Inu built on the legacy of Dogecoin with its playful branding.</p>
-            </div>
-            <div class="coin">
-                <h3>PEPECOIN (2024)</h3>
-                <img src="path/to/pepecoin_image.png" alt="PEPECOIN">
-                <p>Inspired by Pepe the Frog, this meme coin gained traction through social media as a part of the 2024 meme coin surge.</p>
+                <img src="path/to/shib_image.png" alt="Shiba Inu">
+                <p>Dubbed the "Dogecoin Killer," Shiba Inu gained popularity due to its fun branding.</p>
             </div>
         </div>
     </div>
@@ -145,8 +175,10 @@ function openTab(evt, tabName) {
         tabcontent[i].style.display = "none";
     }
     document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active-tab";
 }
 </script>
 
 </body>
 </html>
+
