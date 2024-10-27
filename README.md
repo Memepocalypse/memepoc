@@ -1,5 +1,7 @@
 # Memepocalypse (MEMEPOC)
 
+![Memepocalypse Banner](path/to/your/image.png)
+
 **Powered by AI, Inspired by Memes**
 
 ---
@@ -62,4 +64,3 @@ Memepocalypse (MEMEPOC) explores how memes have grown from humorous expressions 
 ---
 
 For a full exploration of the history and impact of memes, download the [Memepocalypse Document](path/to/meme_history_expanded.docx).
-
