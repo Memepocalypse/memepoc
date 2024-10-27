@@ -18,6 +18,7 @@
             color: #333;
             padding: 1.5rem;
             text-align: center;
+            animation: slideDown 1s ease-out;
         }
         header h1 {
             margin: 0;
@@ -45,6 +46,9 @@
         }
         .section {
             padding: 2rem 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .section h2 {
             color: #555;
@@ -86,6 +90,21 @@
             height: auto;
             border-radius: 8px;
         }
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fadeIn {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
     </style>
 </head>
 <body>
@@ -104,62 +123,45 @@
 
 <div class="container">
     <!-- Home Section -->
-    <div id="home" class="tab active-tab">
-        <div class="section">
-            <h2>Welcome to Memepocalypse</h2>
-            <p>Memepocalypse (MEMEPOC) is a project dedicated to preserving and documenting the cultural evolution of memes. Explore the timeline, learn about famous meme coins, and join a growing community that values meme culture.</p>
-            <img src="BannerGit.PNG" alt="Memepocalypse Banner">
-        </div>
+    <div id="home" class="tab active-tab section">
+        <h2>Welcome to Memepocalypse</h2>
+        <p>Memepocalypse (MEMEPOC) is a project dedicated to preserving and documenting the cultural evolution of memes. Explore the timeline, learn about famous meme coins, and join a growing community that values meme culture.</p>
+        <img src="path/to/home_image.png" alt="Memepocalypse Banner">
     </div>
 
     <!-- Timeline Section -->
-    <div id="timeline" class="tab">
-        <div class="section">
-            <h2>The Evolution of Memes</h2>
-            <p>From Ancient Egypt to the 2024 meme coin surge, memes have shaped our culture and continue to evolve with new digital innovations.</p>
-            <div class="timeline-item">
-                <h3>Ancient Roman Graffiti (79 CE, Pompeii)</h3>
-                <img src="path/to/timeline_image.png" alt="Ancient Roman Graffiti">
-                <p>The eruption of Mt. Vesuvius preserved Roman graffiti that mocked politicians and public figures.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Ancient Egyptian Hieroglyphs (c. 3200 BCE)</h3>
-                <p>Depictions of animals in human situations, reflecting an early form of satire.</p>
-            </div>
+    <div id="timeline" class="tab section">
+        <h2>The Evolution of Memes</h2>
+        <p>From Ancient Egypt to the 2024 meme coin surge, memes have shaped our culture and continue to evolve with new digital innovations.</p>
+        <div class="timeline-item">
+            <h3>Ancient Roman Graffiti (79 CE, Pompeii)</h3>
+            <img src="path/to/timeline_image.png" alt="Ancient Roman Graffiti">
+            <p>The eruption of Mt. Vesuvius preserved Roman graffiti that mocked politicians and public figures.</p>
         </div>
     </div>
 
     <!-- Famous Meme Coins Section -->
-    <div id="memecoins" class="tab">
-        <div class="section">
-            <h2>Famous Meme Coins</h2>
-            <p>Discover some of the most popular meme coins and learn about their history and impact.</p>
-            <div class="timeline-item">
-                <h3>Dogecoin (2013)</h3>
-                <img src="path/to/dogecoin_image.png" alt="Dogecoin">
-                <p>Created as a joke, Dogecoin became a popular meme coin with a dedicated community.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Shiba Inu (2020)</h3>
-                <img src="path/to/shib_image.png" alt="Shiba Inu">
-                <p>Dubbed the "Dogecoin Killer," Shiba Inu gained popularity due to its fun branding.</p>
-            </div>
+    <div id="memecoins" class="tab section">
+        <h2>Famous Meme Coins</h2>
+        <p>Discover some of the most popular meme coins and learn about their history and impact.</p>
+        <div class="timeline-item">
+            <h3>Dogecoin (2013)</h3>
+            <img src="path/to/dogecoin_image.png" alt="Dogecoin">
+            <p>Created as a joke, Dogecoin became a popular meme coin with a dedicated community.</p>
         </div>
     </div>
 
     <!-- Community Section -->
-    <div id="community" class="tab">
-        <div class="section">
-            <h2>Join the Memepocalypse Community</h2>
-            <p>Connect with us on social platforms and follow MEMEPOC on Twitter, GitHub, Dexscreener, and Solscan to stay updated on the latest meme coins.</p>
-            <ul>
-                <li><a href="https://twitter.com/YourTwitterHandle" target="_blank">Twitter</a></li>
-                <li><a href="https://github.com/YourGitHubRepo" target="_blank">GitHub</a></li>
-                <li><a href="https://pump.fun/" target="_blank">Pump.fun</a></li>
-                <li><a href="https://dexscreener.com/" target="_blank">Dexscreener</a></li>
-                <li><a href="https://solscan.io/" target="_blank">Solscan</a></li>
-            </ul>
-        </div>
+    <div id="community" class="tab section">
+        <h2>Join the Memepocalypse Community</h2>
+        <p>Connect with us on social platforms and follow MEMEPOC on Twitter, GitHub, Dexscreener, and Solscan to stay updated on the latest meme coins.</p>
+        <ul>
+            <li><a href="https://twitter.com/YourTwitterHandle" target="_blank">Twitter</a></li>
+            <li><a href="https://github.com/YourGitHubRepo" target="_blank">GitHub</a></li>
+            <li><a href="https://pump.fun/" target="_blank">Pump.fun</a></li>
+            <li><a href="https://dexscreener.com/" target="_blank">Dexscreener</a></li>
+            <li><a href="https://solscan.io/" target="_blank">Solscan</a></li>
+        </ul>
     </div>
 </div>
 
@@ -177,8 +179,19 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active-tab";
 }
+
+/* Scroll Animation */
+document.addEventListener("scroll", function() {
+    var sections = document.querySelectorAll(".section");
+    sections.forEach(function(section) {
+        var sectionPos = section.getBoundingClientRect().top;
+        var screenPos = window.innerHeight / 1.3;
+        if (sectionPos < screenPos) {
+            section.classList.add("fadeIn");
+        }
+    });
+});
 </script>
 
 </body>
 </html>
-
