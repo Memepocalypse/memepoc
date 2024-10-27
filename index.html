@@ -5,47 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memepocalypse (MEMEPOC)</title>
     <style>
+        /* General styling */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             color: #333;
-            line-height: 1.6;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #ffd700;
+            background-color: gold;
             color: #333;
-            padding: 1rem 0;
+            padding: 1rem;
             text-align: center;
         }
         header h1 {
             margin: 0;
         }
+        nav {
+            background: #333;
+            overflow: hidden;
+        }
+        nav a {
+            color: #fff;
+            padding: 1rem;
+            display: inline-block;
+            text-decoration: none;
+        }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 1rem;
         }
-        h2 {
+        .section {
+            padding: 2rem 1rem;
+        }
+        .section h2 {
             color: #555;
         }
-        .timeline, .figure {
-            padding: 1rem;
-            margin: 1rem 0;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
         footer {
+            background: #333;
+            color: #fff;
             text-align: center;
             padding: 1rem;
-            background-color: #222;
-            color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
         }
+        /* Tab content */
+        .tab {
+            display: none;
+        }
+        /* Images */
         img {
             max-width: 100%;
             height: auto;
@@ -54,59 +62,91 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Memepocalypse (MEMEPOC)</h1>
-        <p>Powered by AI, Inspired by Memes</p>
-    </header>
 
-    <div class="container">
-        <section>
-            <h2>Introduction to Memes</h2>
-            <p>Memes have been an integral part of human expression for centuries. This document explores their evolution from ancient cultural symbols to digital crypto assets.</p>
-        </section>
+<header>
+    <h1>Memepocalypse (MEMEPOC)</h1>
+    <p>Powered by AI, Inspired by Memes</p>
+</header>
 
-        <section class="timeline">
-            <h2>Timeline of Memes</h2>
+<nav>
+    <a href="#home" onclick="openTab(event, 'home')">Home</a>
+    <a href="#timeline" onclick="openTab(event, 'timeline')">Timeline</a>
+    <a href="#memecoins" onclick="openTab(event, 'memecoins')">Famous Meme Coins</a>
+    <a href="#community" onclick="openTab(event, 'community')">Community</a>
+</nav>
 
-            <div class="figure">
-                <h3>Ancient Roman Graffiti (79 CE, Pompeii)</h3>
-                <img src="Ancient_Roman_Graffiti.png" alt="Ancient Roman Graffiti">
-                <p>The eruption of Mt. Vesuvius preserved Roman graffiti that mocked politicians and public figures.</p>
-            </div>
-
-            <div class="figure">
-                <h3>Ancient Egyptian Hieroglyphs (c. 3200 BCE)</h3>
-                <img src="Ancient_Egyptian_Hieroglyphs.png" alt="Ancient Egyptian Hieroglyphs">
-                <p>Satirical hieroglyphs show animals performing human tasks, representing early humor in ancient Egypt.</p>
-            </div>
-
-            <div class="figure">
-                <h3>Kilroy Was Here (1940s, WWII)</h3>
-                <img src="Kilroy_Was_Here.png" alt="Kilroy Was Here">
-                <p>This iconic meme spread globally among WWII soldiers, showing that memes could go viral even without the internet.</p>
-            </div>
-
-            <div class="figure">
-                <h3>Dogecoin and Crypto Memes (2013)</h3>
-                <img src="Dogecoin_Crypto_Memes.png" alt="Dogecoin and Crypto Memes">
-                <p>Dogecoin was created as a joke but became a widely popular cryptocurrency due to its meme-based community.</p>
-            </div>
-
-            <div class="figure">
-                <h3>SPX6900 Meme Coin (2024)</h3>
-                <img src="SPX6900_Meme_Coin.png" alt="SPX6900 Meme Coin">
-                <p>SPX6900 emerged as a humorous yet technologically advanced meme coin during the 2024 meme coin surge.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Conclusion</h2>
-            <p>From hieroglyphs to blockchain, memes have shown adaptability, influencing finance and culture. Memepocalypse (MEMEPOC) celebrates this journey, bridging ancient humor with modern innovation.</p>
-        </section>
+<div class="container">
+    <!-- Home Section -->
+    <div id="home" class="tab" style="display: block;">
+        <div class="section">
+            <h2>Welcome to Memepocalypse</h2>
+            <p>Memepocalypse (MEMEPOC) is a project dedicated to preserving and documenting the cultural evolution of memes. Explore the timeline, learn about famous meme coins, and join a growing community that values meme culture.</p>
+            <img src="path/to/home_image.png" alt="Memepocalypse Banner">
+        </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Memepocalypse (MEMEPOC)</p>
-    </footer>
+    <!-- Timeline Section -->
+    <div id="timeline" class="tab">
+        <div class="section">
+            <h2>The Evolution of Memes</h2>
+            <p>From Ancient Egypt to the 2024 meme coin surge, memes have shaped our culture and continue to evolve with new digital innovations.</p>
+            <img src="path/to/timeline_image.png" alt="Memes Timeline">
+        </div>
+    </div>
+
+    <!-- Famous Meme Coins Section -->
+    <div id="memecoins" class="tab">
+        <div class="section">
+            <h2>Famous Meme Coins</h2>
+            <p>Discover some of the most popular meme coins and learn about their history and impact.</p>
+            <div class="coin">
+                <h3>Dogecoin (2013)</h3>
+                <img src="path/to/dogecoin_image.png" alt="Dogecoin">
+                <p>Launched as a joke, Dogecoin became a cultural phenomenon due to its strong community and meme-based appeal.</p>
+            </div>
+            <div class="coin">
+                <h3>Shiba Inu (2020)</h3>
+                <img src="path/to/shib_image.png" alt="Shiba Inu">
+                <p>Often called the "Dogecoin Killer," Shiba Inu built on the legacy of Dogecoin with its playful branding.</p>
+            </div>
+            <div class="coin">
+                <h3>PEPECOIN (2024)</h3>
+                <img src="path/to/pepecoin_image.png" alt="PEPECOIN">
+                <p>Inspired by Pepe the Frog, this meme coin gained traction through social media as a part of the 2024 meme coin surge.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Community Section -->
+    <div id="community" class="tab">
+        <div class="section">
+            <h2>Join the Memepocalypse Community</h2>
+            <p>Connect with us on social platforms and follow MEMEPOC on Twitter, GitHub, Dexscreener, and Solscan to stay updated on the latest meme coins.</p>
+            <ul>
+                <li><a href="https://twitter.com/YourTwitterHandle" target="_blank">Twitter</a></li>
+                <li><a href="https://github.com/YourGitHubRepo" target="_blank">GitHub</a></li>
+                <li><a href="https://pump.fun/" target="_blank">Pump.fun</a></li>
+                <li><a href="https://dexscreener.com/" target="_blank">Dexscreener</a></li>
+                <li><a href="https://solscan.io/" target="_blank">Solscan</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Memepocalypse (MEMEPOC). All rights reserved.</p>
+</footer>
+
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent;
+    tabcontent = document.getElementsByClassName("tab");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    document.getElementById(tabName).style.display = "block";
+}
+</script>
+
 </body>
 </html>
