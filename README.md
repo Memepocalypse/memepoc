@@ -1,6 +1,6 @@
 # Memepocalypse (MEMEPOC)
 
-![Memepocalypse Banner](E5EA68EB-7985-462E-85E0-9E913D373CC2.PNG)
+![Memepocalypse Banner](BannerGit.PNG)
 
 **Powered by AI, Inspired by Memes**
 
