@@ -6,7 +6,7 @@
 
 ---
 
-## Why Memepocalypse (MEMEPOC)?
+## Why Memepocalypse?
 
 In today’s fast-paced digital world, meme coins pop up and vanish at an unprecedented rate. Many of these meme coins are launched hastily, without genuine purpose, and are often driven by short-term gains. This phenomenon has led to a rising number of **rug pulls**—where creators quickly abandon projects after profiting, leaving supporters with nothing. The cycle erodes trust and diminishes the value of meme coins, ultimately threatening the very foundation of meme culture in the crypto space.
 
